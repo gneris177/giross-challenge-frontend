@@ -1,0 +1,50 @@
+<form [class]="'form' + view ? 'view' : '' " (submit)="submit()" [formGroup]="userForm" #formDir="ngForm">
+  <div class="form-group">
+    <label for="">Nome</label>
+    <input type="text" formControlName="name" [readOnly]="view">
+    <div *ngIf="name.invalid && formDir.submitted" class="wrapper-error">
+      <span *ngIf="name.errors?.['required']" class="text">O campo nome é obrigatório</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Email</label>
+    <input type="email" formControlName="email" [readOnly]="view">
+    <div *ngIf="email.invalid && formDir.submitted" class="wrapper-error">
+      <span *ngIf="email.errors?.['required']" class="text">O campo email é obrigatório</span>
+      <span *ngIf="email.errors?.['email']" class="text">O email precisa ser válido</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Sexo</label>
+    <input type="text" formControlName="gender" [readOnly]="view">
+    <div *ngIf="gender.invalid && formDir.submitted" class="wrapper-error">
+      <span *ngIf="gender.errors?.['required']" class="text">O campo sexo é obrigatório</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Telefone</label>
+    <input type="tel" formControlName="phone" [readOnly]="view">
+    <div *ngIf="phone.invalid && formDir.submitted" class="wrapper-error">
+      <span *ngIf="phone.errors?.['required']" class="text">O campo phone é obrigatório</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="">Endereço</label>
+    <input type="text" formControlName="address" [readOnly]="view">
+    <div *ngIf="address.invalid && formDir.submitted" class="wrapper-error">
+      <span *ngIf="address.errors?.['required']" class="text">O campo address é obrigatório</span>
+    </div>
+  </div>
+
+  <div class="wrapper-btn" *ngIf="!view">
+    <app-button-default text="Salvar"></app-button-default>
+  </div>
+</form>
+
+<div class="wrapper-messages">
+  <app-message *ngFor="let item of messages" [text]="item"></app-message>
+</div>

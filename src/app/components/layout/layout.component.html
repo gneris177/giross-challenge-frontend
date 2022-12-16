@@ -1,0 +1,24 @@
+<div class="layout" [attr.data-nav]="navLeftStatus">
+  <header class="header">
+    <h2>Crud usuários</h2>
+    <img src="/assets/images/logo-giross.png" alt="" srcset="" class="header__logo">
+  </header>
+
+  <nav class="nav-left">
+    <span title="button" id="open" class="nav-left__toggle" (click)="toggleNavLeftOpen()"></span>
+    <span title="button" id="close" class="nav-left__toggle" (click)="toggleNavLeftClose()"></span>
+
+    <ul>
+      <li>
+        <a [routerLink]="['/']" routerLinkActive="active" class="icon icon--dashboard">Dashboard</a>
+      </li>
+      <li>
+        <a [routerLink]="['/users']" routerLinkActive="active" class="icon icon--dashboard">Usuários</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="layout-container">
+    <ng-component select="selector"></ng-component>
+  </div>
+</div>

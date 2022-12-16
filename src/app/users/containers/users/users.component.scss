@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+header {
+  display: flex;
+  padding-inline: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 2.6rem;
+}
+
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  height: 32px;
+  border: none;
+  border-radius: 4px;
+  padding-inline: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 250ms ease;
+}
+
+.secondary-btn {
+  background-color: transparent;
+  border: 1px solid #e2e2e2;
+}
+
+.secondary-btn:hover {
+  background-color: #e5e5e5;
+  border: 1px solid #e1e1e1;
+}
+
+.primary-btn {
+  background-color: #314ae7;
+  color: white;
+}
+
+.primary-btn:hover {
+  background-color: #1730d0;
+}
+
+/* Styling the header. Layout done with flex */
+header {
+  grid-column: 2 / 3;
+  border-bottom: 1px solid #dadce0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+}
+
+/* Styling the Breadcrumbs. Layout done with flex */
+
+.breadcrumbs > ul {
+  display: flex;
+  gap: 8px;
+  margin-left: 20px;
+}
+
+.drafts {
+  padding-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-right: 20px;
+}
+
+/* Styling the toggle. Layout done with flex */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 22px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}

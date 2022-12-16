@@ -1,0 +1,129 @@
+.layout {
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: var(--gap-4);
+    background: var(--nav-bar-background);
+    border-bottom: 2px solid #3e4042;
+    height: var(--gap-6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    .header__logo {
+      height: var(--gap-4);
+    }
+  }
+
+  .nav-left {
+    margin-top: 2px;
+    position: fixed;
+    top: var(--gap-6);
+    height: calc(100% - var(--gap-6));
+    width: 256px;
+    transform: translateX(-100%);
+    background: var(--nav-bar-background);
+    @media (min-width: 992px) {
+      transform: translateX(0);
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+
+      li a {
+        display: block;
+        padding: var(--gap-3) var(--gap-4);
+        font-size: 1.6rem;
+        color: #ffffff;
+        text-decoration: none;
+
+        &:hover {
+          background: #3e4042;
+        }
+      }
+    }
+
+    .nav-left__toggle {
+      position: absolute;
+      top: 16px;
+      right: -16px;
+      background-size: contain;
+      width: 28px;
+      height: 28px;
+      display: block;
+      cursor: pointer;
+      &#close {
+        background-image: url('https://img.icons8.com/ios/32/ffffff/circled-chevron-left.png');
+      }
+      &#open {
+        background-image: url('https://img.icons8.com/ios/32/ffffff/circled-chevron-right.png');
+      }
+    }
+  }
+
+  &[data-nav='initial'] {
+    .nav-left {
+      #close {
+        display: none;
+      }
+      @media (min-width: 992px) {
+        #open {
+          display: none;
+        }
+        #close {
+          display: initial;
+        }
+      }
+    }
+
+    .layout-container {
+      @media (min-width: 992px) {
+        margin-left: 256px;
+      }
+    }
+  }
+
+  &[data-nav='open'] {
+    .nav-left {
+      transform: translateX(0);
+      #open {
+        display: none;
+      }
+    }
+
+    .layout-container {
+      @media (min-width: 992px) {
+        margin-left: 256px;
+      }
+    }
+  }
+
+  &[data-nav='close'] {
+    .nav-left {
+      transform: translateX(-100%);
+      #close {
+        display: none;
+      }
+      #open {
+        right: -27px;
+      }
+    }
+  }
+}
+
+.layout-container {
+  margin-top: var(--gap-5);
+  padding: var(--gap-4) var(--gap-2);
+
+  @media (min-width: 992px) {
+    padding: var(--gap-4) var(--gap-6);
+  }
+}

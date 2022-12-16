@@ -1,0 +1,4 @@
+<app-users-header [title]="'Editar usuário'" to="/users" buttonText="Voltar"></app-users-header>
+<div *ngIf="dataUser">
+  <app-users-form (onSubmit)="updateHandler($event)" [dataUser]="dataUser" [messages]="messages"></app-users-form>
+</div>

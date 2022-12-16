@@ -1,0 +1,5 @@
+<app-users-header title="Usuário" buttonText="Voltar" to="/users"></app-users-header>
+<div *ngIf="dataUser">
+  <app-users-form [dataUser]="dataUser" [messages]="messages" [view]="true"></app-users-form>
+</div>
+
