@@ -1,0 +1,5 @@
+<header class="header">
+  <h2 class="header__title">{{ title }}</h2>
+  <app-button-default *ngIf="buttonText" class="header__button" (click)="toLink()"
+    text="{{buttonText}}"></app-button-default>
+</header>

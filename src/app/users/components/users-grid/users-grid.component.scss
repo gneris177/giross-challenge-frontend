@@ -1,0 +1,70 @@
+.wrapper-table {
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  &::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  .table {
+    width: 100%;
+    min-width: 1140px;
+    background: #242526;
+    border-collapse: collapse;
+    td,
+    th {
+      padding: var(--gap-2) 0;
+      text-align: start;
+      border-bottom: 2px solid var(--page-background);
+      font-size: 1.4rem;
+    }
+
+    td {
+      padding: var(--gap-2) 0;
+    }
+
+    .actions {
+      ul {
+        display: flex;
+        gap: var(--gap-2);
+
+        .icon {
+          display: block;
+          width: 24px;
+          height: 24px;
+          background-size: contain;
+          background-repeat: no-repeat;
+          cursor: pointer;
+        }
+
+        .icon--view {
+          background-image: url(https://img.icons8.com/material-rounded/24/ffffff/visible.png);
+          &:hover {
+            background-image: url(https://img.icons8.com/material-rounded/24/314ae7/visible.png);
+          }
+        }
+
+        .icon--update {
+          background-image: url(https://img.icons8.com/sf-regular-filled/32/ffffff/pencil.png);
+          &:hover {
+            background-image: url(https://img.icons8.com/sf-regular-filled/32/314ae7/pencil.png);
+          }
+        }
+
+        .icon--remove {
+          background-image: url(https://img.icons8.com/ios-glyphs/30/ffffff/trash--v1.png);
+          &:hover {
+            background-image: url(https://img.icons8.com/ios-glyphs/30/314ae7/trash--v1.png);
+          }
+        }
+      }
+    }
+  }
+}
